@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS QandA;
+CREATE DATABASE QandA;
+USE QandA;
+
+CREATE TABLE Questions (
+
+)
+
+CREATE TABLE Answers (
+
+)
