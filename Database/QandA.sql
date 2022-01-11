@@ -3,9 +3,29 @@ CREATE DATABASE QandA;
 USE QandA;
 
 CREATE TABLE Questions (
-
+  Question_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  Product_id INTEGER,
+  Name VARCHAR(25),
+  Body VARCHAR(1000),
+  Email VARCHAR(100),
+  Date VARCHAR(24),
+  Helpfulness INTEGER,
+  Reported VARCHAR(5) DEFAULT 'false'
 )
 
 CREATE TABLE Answers (
+  Answer_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  Question_id INTEGER,
+  Name VARCHAR(25),
+  Body VARCHAR(1000),
+  Email VARCHAR(100),
+  Date VARCHAR(24),
+  Helpfulness INTEGER,
+  Reported VARCHAR(5) DEFAULT 'false',
+)
 
+CREATE TABLE Photos (
+  Photo_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  Answer_id,
+  URL VARCHAR(100)
 )
