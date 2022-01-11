@@ -1,0 +1,24 @@
+{
+  "name": "sdc",
+  "version": "1.0.0",
+  "description": "''",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charming-Chestnut/SDC-Q-A.git"
+  },
+  "author": "Ronin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Charming-Chestnut/SDC-Q-A/issues"
+  },
+  "homepage": "https://github.com/Charming-Chestnut/SDC-Q-A#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "postgres": "^1.0.2"
+  }
+}
