@@ -10,7 +10,7 @@ CREATE TABLE Questions (
   Email VARCHAR(100),
   Date VARCHAR(24),
   Helpfulness INTEGER,
-  Reported VARCHAR(5) DEFAULT 'false'
+  Reported BOOLEAN DEFAULT(false)
 )
 
 CREATE TABLE Answers (
@@ -21,7 +21,7 @@ CREATE TABLE Answers (
   Email VARCHAR(100),
   Date VARCHAR(24),
   Helpfulness INTEGER,
-  Reported VARCHAR(5) DEFAULT 'false',
+  Reported BOOLEAN DEFAULT(false)
 )
 
 CREATE TABLE Photos (
