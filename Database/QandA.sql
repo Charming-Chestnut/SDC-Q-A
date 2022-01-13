@@ -3,29 +3,29 @@ CREATE DATABASE QandA;
 USE QandA;
 
 CREATE TABLE Questions (
-  Question_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  Product_id INTEGER,
-  Name VARCHAR(25),
-  Body VARCHAR(1000),
-  Email VARCHAR(100),
-  Date VARCHAR(24),
-  Helpfulness INTEGER,
-  Reported BOOLEAN DEFAULT(false)
+  question_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  product_id INTEGER,
+  name VARCHAR(25),
+  body VARCHAR(1000),
+  email VARCHAR(100),
+  date VARCHAR(24),
+  helpfulness INTEGER,
+  reported BOOLEAN DEFAULT(false)
 )
 
 CREATE TABLE Answers (
-  Answer_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  Question_id INTEGER,
-  Name VARCHAR(25),
-  Body VARCHAR(1000),
-  Email VARCHAR(100),
-  Date VARCHAR(24),
-  Helpfulness INTEGER,
-  Reported BOOLEAN DEFAULT(false)
+  answer_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  question_id INTEGER FOREIGN KEY REFRENCES Questions(Question_id),
+  name VARCHAR(25),
+  body VARCHAR(1000),
+  email VARCHAR(100),
+  date VARCHAR(24),
+  helpfulness INTEGER,
+  reported BOOLEAN DEFAULT(false)
 )
 
 CREATE TABLE Photos (
-  Photo_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  Answer_id,
-  URL VARCHAR(100)
+  photo_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  answer_id FOREIGN KEY REFRENCES Answers(Answer_id),
+  url VARCHAR(100)
 )

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 let questionsSchema = mongoose.schema({
-  _id: Number,
+  QuestionID: Number,
   productID: Number,
   Name: String,
   Question: String,
@@ -9,10 +9,11 @@ let questionsSchema = mongoose.schema({
   Date: String,
   Helpfulness: Number,
   Reported: Boolean
+  Answers: Array
 })
 
 let answersSchema = mongoose.schema({
-  _id: Number,
+  AnswerID: Number,
   questionID: Number,
   Name: String,
   Question: String,
