@@ -21,6 +21,7 @@ CREATE TABLE Answers (
   asker_name VARCHAR(25),
   asker_email VARCHAR(100),
   reported BOOLEAN DEFAULT(false),
+  helpful INTEGER,
   FOREIGN KEY (question_id) REFERENCES Questions(question_id)
 );
 
@@ -32,3 +33,6 @@ CREATE TABLE Photos (
 );
 
 /* mysql -u root < Database/QandA.sql
+/* LOAD DATA LOCAL INFILE './questions.csv' INTO TABLE Questions FIELDS TERMINATED BY ',';
+/* LOAD DATA LOCAL INFILE './answers.csv' INTO TABLE Answers FIELDS TERMINATED BY ',';
+/* LOAD DATA LOCAL INFILE './answers_photos.csv' INTO TABLE Photos FIELDS TERMINATED BY ',';

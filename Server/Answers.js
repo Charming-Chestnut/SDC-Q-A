@@ -3,7 +3,13 @@ const sql = require('mysql2')
 const connection = require('./sqlConnector.js')
 
 answerGet = (req, res) => {
-  res.send(req.params.question)
+  let query = `SELECT * FROM Answers WHERE question_id=${req.params.question} ORDER BY helpful DESC`
+  connection.query(query, (error, data) => {
+    if (error) {
+      throw ('Error', error)
+    }
+    res.send(data)
+  })
 }
 
 answerPost = (req, res) => {
