@@ -13,7 +13,13 @@ questionGet = (req, res) => {
 }
 
 questionPost = (req, res) => {
-
+  let query = `INSERT INTO Questions (product_id, body, date_written, asker_name, asker_email, reported, helpful) VALUES (${req.query.product_id}, '${req.body.body}', ${Date.now()}, '${req.body.name}', '${req.body.email}', 0, 0)`
+  connection.query(query, (error, data) => {
+    if (error) {
+      throw ('Error', error)
+    }
+    res.sendStatus(201)
+  })
 }
 
 questionHelpful = (req, res) => {

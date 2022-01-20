@@ -4,6 +4,7 @@ const answers = require('./Answers.js')
 const connection = require('./sqlConnector.js')
 
 let server = express();
+server.use(express.json())
 let port = 3001
 server.listen(port, () => {
   console.log(`listening at http://localhost:${port}/`);
